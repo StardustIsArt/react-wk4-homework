@@ -6,11 +6,11 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>React Weather App</h1>
+        <h1 className="titleName">React Weather App</h1>
         <Weather />
         <footer className="footer">
           <h6>
-            This project was coded by:
+            This project was coded by
             <a
               href="https://yociusefx.myportfolio.com"
               target="_blank"
@@ -19,7 +19,7 @@ function App() {
               {" "}
               Samantha Yocius
             </a>{" "}
-            & openly sourced on:
+            & openly sourced on
             <a
               href="https://github.com/StardustIsArt/react-wk4-homework"
               target="_blank"

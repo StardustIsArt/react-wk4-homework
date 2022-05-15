@@ -1,6 +1,13 @@
 .weather {
-    border: 1px solid rgb(57, 211, 55);
+    border: 3px solid rgb(127, 33, 222);
     border-radius: 15px;
     margin: 5px auto;
     padding: 12px;
+   
+}
+
+.weather h1 {
+    color: #2e0b30df;
+    line-height: 29px;
+    padding: 10px 1px 4px;
 }
