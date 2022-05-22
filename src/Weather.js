@@ -21,7 +21,7 @@ export default function Weather(props) {
     });
   }
 
-  if (weatherDate.ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <SearchEngine />
