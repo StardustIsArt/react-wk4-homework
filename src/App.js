@@ -14,7 +14,7 @@ function App() {
             <a
               href="https://yociusefx.myportfolio.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               {" "}
               Samantha Yocius
@@ -23,7 +23,7 @@ function App() {
             <a
               href="https://github.com/StardustIsArt/react-wk4-homework"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               {" "}
               GitHub
