@@ -4,45 +4,54 @@ import axios from "axios";
 import React, { useState } from "react";
 import SearchEngine from "./SearchEngine";
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(Math.round(response.data.main.temp));
-    setReady(true);
+
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      wind: Math.round(response.data.wind.speed),
+      city: response.data.name,
+      description: response.data.weather[0].description,
+      iconUrl: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsbYZZUYnGhB2r7ULDdGWk4j4cCwpu3hAhg&usqp=CAU`,
+      date: "Saturday 10:41 CST",
+    });
   }
 
-  if (ready) {
+  if (weatherDate.ready) {
     return (
       <div className="Weather">
         <SearchEngine />
-        <h1>New York</h1>
+        <h1>{weatherData.city}</h1>
         <ul className="conditions">
-          <li>Saturday 10:41 CST</li>
-          <li>Sunny</li>
+          <li>{weatherData.date}</li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
           <div className="col-7">
             <img
               className="sun-image"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsbYZZUYnGhB2r7ULDdGWk4j4cCwpu3hAhg&usqp=CAU"
+              src={weatherData.iconUrl}
               alt="sunny"
-              width={115}
+              width={110}
             />
-            <span className="temperature">{temperature} </span>{" "}
+            <span className="temperature">
+              {Math.round(weatherData.temperature)}{" "}
+            </span>{" "}
             <span className="units">ºC | ºF </span>
           </div>
           <div className="col-5">
             <ul className="pt-4">
               <li>
-                Precipitation: <span className="numericals">15</span>%
+                Humidity:{" "}
+                <span className="numericals">{weatherData.humidity}</span>%
               </li>
               <li>
-                Humidity: <span className="numericals">72</span>%
-              </li>
-              <li>
-                Wind: <span className="numericals">13 </span>km/h
+                Wind: <span className="numericals">{weatherData.wind} </span>
+                km/h
               </li>
             </ul>
           </div>
@@ -51,8 +60,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "e1f92b0f0a53fe657eb50521404f459d";
-    let city = "New York";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Weather is loading...";
