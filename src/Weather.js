@@ -1,5 +1,6 @@
 import "./Weather.css";
-import "./SearchEngine";
+import "./SearchEngine.css";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import React, { useState } from "react";
 import SearchEngine from "./SearchEngine";
@@ -17,7 +18,7 @@ export default function Weather(props) {
       city: response.data.name,
       description: response.data.weather[0].description,
       iconUrl: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsbYZZUYnGhB2r7ULDdGWk4j4cCwpu3hAhg&usqp=CAU`,
-      date: "Saturday 10:41 CST",
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -27,7 +28,9 @@ export default function Weather(props) {
         <SearchEngine />
         <h1>{weatherData.city}</h1>
         <ul className="conditions">
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
@@ -35,7 +38,7 @@ export default function Weather(props) {
             <img
               className="sun-image"
               src={weatherData.iconUrl}
-              alt="sunny"
+              alt={weatherData.description}
               width={110}
             />
             <span className="temperature">
