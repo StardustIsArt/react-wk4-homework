@@ -1,49 +1,54 @@
 .Weather {
-    border: 3px solid rgb(109, 43, 175);
-    border-radius: 15px;
-    margin: 5px auto;
-    padding: 12px;
-   max-width: 700px;
-   font-family:Verdana, Geneva, Tahoma, sans-serif;
-   
+  border: 3px solid rgb(109, 43, 175);
+  border-radius: 15px;
+  margin: 5px auto;
+  padding: 12px;
+  max-width: 550px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .Weather h1 {
-    color: rgb(109, 43, 175);
-    line-height: 29px;
-    padding: 10px 1px 4px;
+  color: rgb(109, 43, 175);
+  line-height: 29px;
+  padding: 10px 1px 4px;
 }
 
 .Weather .temperature {
-    font-weight: 450;
-    font-size: 38pt;
-    position: relative;
-    top: 5px;
-     color: rgb(109, 43, 175);
+  font-weight: 450;
+  font-size: 38pt;
+  position: relative;
+  top: 5px;
+  color: rgb(109, 43, 175);
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .Weather li {
-    list-style: none;
+  list-style: none;
 }
 
 .conditions {
-     margin: 0;
+  margin: 0;
+}
+
+.Weather canvas {
+  color: #0e2644;
+  height: 64px;
+  display: inline-block;
 }
 
 .Weather .units {
-    position: relative;
-    top: -18px;
-    font-size: 16px;
-    left: -15px;
+  position: relative;
+  top: -18px;
+  font-size: 16px;
+  left: -15px;
 }
 
 .numericals {
-    color: rgb(109, 43, 175);
-    font-weight: 650;
+  color: rgb(109, 43, 175);
+  font-weight: 650;
 }

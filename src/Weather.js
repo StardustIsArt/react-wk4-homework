@@ -1,5 +1,4 @@
 import "./Weather.css";
-import "./SearchEngine.css";
 import WeatherInfo from "./WeatherInfo";
 
 import axios from "axios";
@@ -9,7 +8,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
-    console.log(response.data);
 
     setWeatherData({
       ready: true,
@@ -18,7 +16,7 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
       description: response.data.weather[0].description,
-      iconUrl: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsbYZZUYnGhB2r7ULDdGWk4j4cCwpu3hAhg&usqp=CAU`,
+      icon: response.data.icon,
       date: new Date(response.data.dt * 1000),
     });
   }
