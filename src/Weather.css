@@ -37,15 +37,15 @@ ul {
 
 .Weather canvas {
   color: #0e2644;
-  height: 23px;
-  display: inline-block;
 }
 
-.Weather .units {
+.WeatherTemperature .units {
   position: relative;
   top: -18px;
   font-size: 16px;
   left: -15px;
+  text-decoration: none;
+  
 }
 
 .numericals {
