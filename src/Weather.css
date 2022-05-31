@@ -14,17 +14,19 @@
 }
 
 .Weather .temperature {
-  font-weight: 450;
-  font-size: 38pt;
+  font-size: 36pt;
   position: relative;
-  top: 5px;
+  top: -24px;
   color: rgb(109, 43, 175);
+  letter-spacing: -3pt;
 }
 
-ul {
+.Weather ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
+  top: -7px;
 }
 
 .Weather li {
@@ -36,19 +38,24 @@ ul {
 }
 
 .Weather canvas {
-  color: #0e2644;
+  margin: 10px auto;
 }
 
 .WeatherTemperature .units {
   position: relative;
-  top: -18px;
   font-size: 16px;
-  left: -15px;
+  top: -48px;
+  left: -4px;
+  color: rgb(109, 43, 175);
+  line-height: 1;
+  letter-spacing: -0.48pt;
   text-decoration: none;
-  
 }
 
-.numericals {
-  color: rgb(109, 43, 175);
-  font-weight: 650;
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+  color: rgb(49, 184, 202);
 }
