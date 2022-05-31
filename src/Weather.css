@@ -1,5 +1,5 @@
 .Weather {
-  border: 3px solid rgb(109, 43, 175);
+  border: 3px solid rgb(140, 231, 208);
   border-radius: 15px;
   margin: 5px auto;
   padding: 12px;
@@ -8,7 +8,7 @@
 }
 
 .Weather h1 {
-  color: rgb(109, 43, 175);
+  color: rgb(140, 231, 208);
   line-height: 29px;
   padding: 10px 1px 4px;
 }
@@ -17,7 +17,7 @@
   font-size: 36pt;
   position: relative;
   top: -24px;
-  color: rgb(109, 43, 175);
+  color: rgb(140, 231, 208);
   letter-spacing: -3pt;
 }
 
@@ -46,7 +46,7 @@
   font-size: 16px;
   top: -48px;
   left: -4px;
-  color: rgb(109, 43, 175);
+  color: rgb(140, 231, 208);
   line-height: 1;
   letter-spacing: -0.48pt;
   text-decoration: none;
@@ -57,5 +57,5 @@ a:visited,
 a:link,
 a:active {
   text-decoration: none;
-  color: rgb(49, 184, 202);
+  color: rgba(238, 115, 250, 0.783);
 }

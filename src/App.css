@@ -1,10 +1,12 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #113f67f3;
+    color: azure;
 }
 
 .footer a {
   text-decoration: none;
-  color: rgb(38, 105, 111);
+
 }
 
 .footer {
@@ -12,5 +14,5 @@ body {
 }
 
 .titleName {
- text-align: center;
+  text-align: center;
 }
