@@ -8,9 +8,12 @@ import React, { useState } from "react";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
+
   function handleResponse(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
@@ -22,7 +25,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "e1f92b0f0a53fe657eb50521404f459d";
+    const apiKey = "9fb5501b4dce67e01b28ad3f8ef3ea94";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -43,9 +46,10 @@ export default function Weather(props) {
           <div className="row">
             <div className="col-9">
               <input
-                type="text"
+                type="search"
                 placeholder="Enter a City..."
                 className="form-control"
+                autoFocus="on"
                 onChange={handleCityChange}
               />
             </div>
@@ -55,7 +59,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast size={62} />
+        <WeatherForecast coordinates={weatherData.coordinates} size={62} />
       </div>
     );
   } else {
